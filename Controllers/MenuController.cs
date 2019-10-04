@@ -26,15 +26,20 @@ namespace BurgerShack.Controllers
             }
         }
 
-
-
-
-
-
-
-        public MenuController()
+        private void Print()
         {
-            _ms = new MenuService();
+            foreach (string message in _ms.Messages)
+            {
+                System.Console.WriteLine(message);
+            }
+            _ms.Messages.Clear();
+            System.Console.WriteLine();
         }
+
+
+
+
+
+
     }
 }

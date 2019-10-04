@@ -9,10 +9,11 @@ namespace BurgerShack.Models
 
 
 
-        public Drinks(string title, double price, string desc) : base(title, price, desc)
+        public Drinks(string title, double price, int calories, string desc) : base(title, price, calories, desc)
         {
             Title = title;
             Price = price;
+            Calories = calories;
             Desc = desc;
         }
     }
