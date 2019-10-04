@@ -6,7 +6,8 @@ namespace BurgerShack
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Clear();
+
         }
     }
 }
