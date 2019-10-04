@@ -10,14 +10,24 @@ namespace BurgerShack.Services
 
         public void Setup()
         {
-            Entree nBurger = new Entree("Nathan Burger", 6, "A burger for the discerning gourmand.");
-            Entree dBurger = new Entree("Dory Burger", 3, "Half of a Nathan Burger.  The other half has been eaten by Nathan.");
-            Entree chicken = new Entree("Chicken Sandwich", 4, "Like a burger, but with chicken.  So not really a burger at all.");
+            Entree nBurger = new Entree("Nathan Burger", 6, 900, "A double-patty burger for the most discerning of gourmands.", "Caramelized onions, pickles, and spicy brown mustard.");
+            Entree dBurger = new Entree("Dory Burger", 3, 450, "Half of a Nathan Burger.  The other half has been eaten by Nathan.", "Caramelized onions, pickles, and spicy brown mustard.");
+            Entree lBurger = new Entree("Laura Burger", 5, 600, "An aggressively homosexual burger.", "Saurkraut, pickles, and yellow mustard.");
+            Entree chicken = new Entree("Chicken Sandwich", 4, 500, "Like a burger, but with chicken.  So not really like a burger at all.", "Lettuce and mayo.");
 
-            MenuItems.AddRange(new MenuItem[] { nBurger, dBurger, chicken });
+            MenuItems.AddRange(new MenuItem[] { nBurger, dBurger, lBurger, chicken });
         }
 
-
+        public void GetMenuItems()
+        {
+            Messages.Add("Menu");
+            for (int i = 0; i < MenuItems.Count; i++)
+            {
+                MenuItem m = MenuItems[i];
+                Messages.Add($"{i + 1}. {m.Title}: {m.Price:c} - {m.Calories} calories");
+            }
+            Messages.Add("Type a number to see details and to add to order.\nPress Q to quit.");
+        }
 
 
 
