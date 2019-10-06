@@ -6,14 +6,12 @@ namespace BurgerShack.Controllers
     public class MenuController
     {
         private MenuService _ms { get; set; } = new MenuService();
-        public bool Start()
-        {
-            return GetUserInput();
-        }
 
         public bool GetUserInput()
         {
             Console.Clear();
+
+            _ms.GetMenuItems();
 
             string choice = Console.ReadLine().ToLower();
             switch (choice)
