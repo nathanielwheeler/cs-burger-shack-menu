@@ -17,6 +17,7 @@ namespace BurgerShack.Models
 
 
 
+
         public MenuItem(string title, double price, int calories, string desc)
         {
             Title = title;

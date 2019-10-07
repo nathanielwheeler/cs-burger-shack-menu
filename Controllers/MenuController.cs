@@ -23,7 +23,21 @@ namespace BurgerShack.Controllers
                         // Prints menu item details
                         _ms.GetMenuItems(index - 1);
                         Print();
-                        string itemChoice = Console.ReadLine().ToLower();
+                        // string itemChoice = Console.ReadLine().ToLower();
+                        // if (itemChoice == "a")
+                        // {
+                        //     _ms.Messages.Add("Enter Quantity:");
+                        //     Print();
+                        //     string input = Console.ReadLine();
+                        //     if (int.TryParse(input, out int quantity))
+                        //     {
+                        //         _ms.AddToOrder(index - 1, quantity);
+                        //     }
+                        //     else
+                        //     {
+                        //         _ms.Messages.Add("Invalid number.");
+                        //     }
+                        // }
                         Console.Clear();
                     }
                     else

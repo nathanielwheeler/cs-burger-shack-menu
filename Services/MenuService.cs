@@ -35,11 +35,24 @@ namespace BurgerShack.Services
             {
                 MenuItem item = MenuItems[index];
                 Messages.Add(item.GetTemplate());
+                Messages.Add("\nEnter 'A' to add to order.");
+
+                if (Order.ContainsKey(MenuItems[index]))
+                {
+                    Messages.Add("Enter 'R' to remove from order.");
+                }
             }
             else
             {
                 Messages.Add("Invalid Choice... Baka!");
             }
+        }
+
+        // Add to Order.
+        public void AddToOrder(int MenuItemIndex, int quantity)
+        {
+            MenuItem m = MenuItems[MenuItemIndex];
+            Order.Add(m, quantity);
         }
 
         // Display all items in checkout and show the price total
