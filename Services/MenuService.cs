@@ -20,14 +20,27 @@ namespace BurgerShack.Services
 
         public void GetMenuItems()
         {
-            Messages.Add("Menu");
+            Messages.Add("!!! Nathan's Burger Shack Menu!!!\n");
             for (int i = 0; i < MenuItems.Count; i++)
             {
                 MenuItem m = MenuItems[i];
                 Messages.Add($"{i + 1}. {m.Title}: {m.Price:c} - {m.Calories} calories");
             }
-            Messages.Add("Type a number to see details and to add to order.\nPress Q to quit.");
+            Messages.Add("Enter number to view item.\nEnter Q to quit.");
         }
+        internal void GetMenuItems(int index)
+        {
+            if (index < MenuItems.Count && index > -1)
+            {
+                MenuItem item = MenuItems[index];
+                Messages.Add(item.GetTemplate());
+            }
+            else
+            {
+                Messages.Add("Invalid Choice... Baka!");
+            }
+        }
+
 
 
 

@@ -9,17 +9,26 @@ namespace BurgerShack.Controllers
 
         public bool GetUserInput()
         {
+            _ms.GetMenuItems();
+            Print();
+            string choice = Console.ReadLine().ToLower();
             Console.Clear();
 
-            _ms.GetMenuItems();
-
-            string choice = Console.ReadLine().ToLower();
             switch (choice)
             {
                 case "q":
                     return false;
                 default:
-                    System.Console.WriteLine("Invalid Command");
+                    if (int.TryParse(choice, out int index))
+                    {
+                        // Prints menu item details
+                        _ms.GetMenuItems(index - 1);
+                        Print();
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Invalid Command");
+                    }
                     return true;
             }
         }
