@@ -8,7 +8,7 @@ namespace BurgerShack.Models
 
         public override string GetTemplate()
         {
-            return $"¡¡¡ {Title} - {Price:c} - {Calories} calories !!!\n{Desc}\nIngredients: {Ingredients}\n\n";
+            return $"\n\t¡¡¡ {Title} - {Price:c} - {Calories} calories !!!\n\n{Desc}\n\nIngredients: {Ingredients}\n\n";
         }
 
         public Entree(string title, double price, int calories, string desc, string ingredients) : base(title, price, calories, desc)

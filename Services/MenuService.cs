@@ -7,6 +7,7 @@ namespace BurgerShack.Services
     {
         public List<MenuItem> MenuItems { get; private set; }
         public List<string> Messages { get; set; }
+        public Dictionary<MenuItem, int> Order { get; set; }
 
         public void Setup()
         {
@@ -41,6 +42,19 @@ namespace BurgerShack.Services
             }
         }
 
+        // Display all items in checkout and show the price total
+        public void Checkout()
+        {
+            Messages.Add("\tCheckout\n");
+            double orderTotal = 0;
+            foreach (KeyValuePair<MenuItem, int> item in Order)
+            {
+                // Multiplies item price by quantity ordered, then adds this information to Messages
+                orderTotal += item.Key.Price * item.Value;
+                Messages.Add($"{item.Key.Title} x{item.Value} — {item.Key.Price:c * item.Value}");
+            }
+            Messages.Add($"\n\n\tTotal:\t{orderTotal:c}");
+        }
 
 
 

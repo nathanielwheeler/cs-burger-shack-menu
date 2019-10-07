@@ -13,7 +13,6 @@ namespace BurgerShack.Controllers
             Print();
             string choice = Console.ReadLine().ToLower();
             Console.Clear();
-
             switch (choice)
             {
                 case "q":
@@ -24,6 +23,8 @@ namespace BurgerShack.Controllers
                         // Prints menu item details
                         _ms.GetMenuItems(index - 1);
                         Print();
+                        string itemChoice = Console.ReadLine().ToLower();
+                        Console.Clear();
                     }
                     else
                     {
